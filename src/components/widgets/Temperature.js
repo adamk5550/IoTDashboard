@@ -1,57 +1,52 @@
 import React from 'react';
-import { Bar } from 'react-chartjs';
+import { SemiCircle } from 'react-progressbar.js';
 
 class Temperature extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-          {
-            label: 'Bar Chart First dataset',
-            fillColor: '#E8575A',
-            strokeColor: '#E8575A',
-            highlightFill: 'rgba(220,220,220,0.75)',
-            highlightStroke: 'rgba(220,220,220,1)',
-            data: [65, 59, 80, 81, 56, 55, 40],
-          },
-          {
-            label: 'My Second dataset',
-            fillColor: '#0094D6',
-            strokeColor: '#0094D6',
-            highlightFill: 'rgba(151,187,205,0.75)',
-            highlightStroke: 'rgba(151,187,205,1)',
-            data: [28, 48, 40, 19, 86, 27, 90],
-          },
-        ],
-      },
+      temp: 0
     };
   }
 
   componentDidMount() {
-    const refreshIntervalId  = setInterval(() => {
-      this.state.data.datasets[0].data.shift();
-      this.state.data.datasets[0].data.push(20);
 
-      this.state.data.datasets[1].data.shift();
-      this.state.data.datasets[1].data.push(70);
-      this.setState({
-        data: this.state.data,
-        refreshIntervalId,
-      });
-    }, 2000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.refreshIntervalId);
   }
 
   render() {
+
+    const tempStyle = {
+      width: '100%',
+      maxWidth: '350px',
+      height: '100%',
+      minHeight: '220px',
+      margin:"auto"
+    };
+
+    const tempOptions = {
+      strokeWidth: 6,
+      color: '#FFEA82',
+      trailColor: '#eee',
+      trailWidth: 3,
+      easing: 'easeInSine',
+      from: {color: '#0080ff'},
+      to: {color: '#ED6A5A'},
+      text: {
+        value: "hiya",
+        alignToBottom: false
+      }
+    }
+
     return (
-      <div>
-         <Bar data={this.state.data}  options={{responsive: true, animationSteps: 300 }} height="210" width="800"/>
-       </div>
+      <SemiCircle
+        containerStyle={tempStyle}
+        options={tempOptions}
+        containerClassName={'container has-text-centered'}
+        progress={0.7}
+       />
     );
   }
 }

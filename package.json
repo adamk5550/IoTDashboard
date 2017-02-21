@@ -49,10 +49,12 @@
   "dependencies": {
     "bulma": "^0.3.1",
     "chart.js": "^1.1.1",
+    "rc-progress": "^2.0.6",
     "react": "^15.4.2",
     "react-chartjs": "^0.8.0",
     "react-dazzle": "^1.2.4",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-progressbar.js": "^0.2.0"
   },
   "scripts": {
     "start": "node scripts/start.js",

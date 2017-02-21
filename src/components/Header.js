@@ -2,15 +2,12 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <section className="hero">
+    <section className="hero is-paddingless">
       <div className="hero-body">
         <div className="container">
-          <h1 className="title">
+          <h3 className="title">
             Innovation Zone
-          </h1>
-          <h2 className="subtitle">
-            Our IoT Dashboard
-          </h2>
+          </h3>
         </div>
       </div>
     </section>

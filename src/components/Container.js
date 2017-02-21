@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 
 const Container = ({children}) => {
   return (
-    <div className="container body">
-      <div className="main_container">
+    <div className="section is-paddingless">
+      <div className="container">
         {children}
       </div>
     </div>

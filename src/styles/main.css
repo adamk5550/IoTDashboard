@@ -1,0 +1,4 @@
+/*removes add widget button which is caused by editable status*/
+.add-widget-button {
+  display: none;
+}
